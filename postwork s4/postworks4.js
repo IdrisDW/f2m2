@@ -50,3 +50,39 @@ console.log("Test 3:", deepEqual(john, john)); // true
 console.log("Test 4:", deepEqual(john, { firstName: "John", lastName: "Doe" })); // true
 console.log("Test 5:", deepEqual(john, { firstName: "John" })); // false
 
+
+
+// Chunk:
+// Escribir una función chunk que recibe un arreglo y un número entero size. La función debe dividir el arreglo 
+//en múltiples arreglos del tamaño determinado por size.
+
+
+//  function chunk(array, size) {
+//   // Code goes here
+// };
+
+// const data = [1, 2, 3, 4, 5, 6, 7, 8]
+
+// console.log('Test 1:', chunk(data, 1)) // [[1], [2], [3], [4], [5], [6], [7], [8]]
+// console.log('Test 2:', chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7, 8]]
+// console.log('Test 3:', chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7, 8]]
+
+// works..
+
+ function chunk(array, size) {
+  
+  let temp = [];
+    for (let i = 0; i < array.length; i = i + size) {
+      let item = array.slice(i, i + size);
+      temp .push(item);
+    }
+    return temp ;
+}
+
+
+
+const data = [1, 2, 3, 4, 5, 6, 7, 8]
+
+console.log('Test 1:', chunk(data, 1)) // [[1], [2], [3], [4], [5], [6], [7], [8]]
+console.log('Test 2:', chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7, 8]]
+console.log('Test 3:', chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7, 8]]
