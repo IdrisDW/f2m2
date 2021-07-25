@@ -96,35 +96,7 @@ console.log("Test 3:", chunk(data, 3)); // [[1, 2, 3], [4, 5, 6], [7, 8]]
 //    console.log('Test 3:', frequency('john.doe@domain.com'))
 //    // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
 
-//  function frequency(string) {
-//      let  myObj = new Object();
 
-//  // Code goes here
-// //  let ch;
-// //  let counted = 0;
-// //   for (let i = 0; i < string.length; i++) {
-// //     if (string[i] == string[i]) {
-// //       counted += 1;
-// //     }
-// //   }
-// //   return counted;
-//  let count;
-//  let ch ;
-// for (var i = 0; i < string.length; i++) {
-//     console.log("here " ,string[i]);
-//      if (string[i] == string.charAt(i)){
-//     //     count +=1;
-//     //     //myObj.count = count;
-//     }
-//     console.log("count : "+ count);
-//     myObj.charr = string.charAt(i);
-//                     // myObj.ccount = string.charAt();
-//                     //  console.log(string.charAt(i));
-//   console.log(myObj);
-// }
-
-// }
-//works
 function frequency(string) {
   let countt = {};
   let ch;
