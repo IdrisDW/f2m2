@@ -97,21 +97,6 @@ console.log("Test 3:", chunk(data, 3)); // [[1, 2, 3], [4, 5, 6], [7, 8]]
 //    // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
 
 
-function frequency(string) {
-  let countt = {};
-  let ch;
-  for (let  i = 0; i < string.length; i++) {
-    ch= string.charAt(i);
-    if (countt[ch]) {
-      countt[ch]++;
-    } else {
-      countt[ch] = 1;
-    }
-  }
-
-  return countt;
-}
-
 //trying to sort it out
 function frequency(string) {
     let countt = {};
@@ -125,15 +110,11 @@ function frequency(string) {
         countt[ch] = 1;
       }
     }
-    
-
     function sortObjectByKeys(o) {
         return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
     }
-   
     csort=sortObjectByKeys(countt); 
     return csort;
-   
   }
 
 console.log("Test 1:", frequency("cccbbbaaa"));
