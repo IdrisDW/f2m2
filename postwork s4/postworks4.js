@@ -141,7 +141,28 @@ function frequency(string) {
 }
 
 //trying to sort it out
+function frequency(string) {
+    let countt = {};
+    let csort = {};
+    let ch;
+    for (let  i = 0; i < string.length; i++) {
+      ch= string.charAt(i);
+      if (countt[ch]) {
+        countt[ch]++;
+      } else {
+        countt[ch] = 1;
+      }
+    }
+    
 
+    function sortObjectByKeys(o) {
+        return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
+    }
+   
+    csort=sortObjectByKeys(countt); 
+    return csort;
+   
+  }
 
 console.log("Test 1:", frequency("cccbbbaaa"));
 // {a: 3, b: 3, c: 3}
