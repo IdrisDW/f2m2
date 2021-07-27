@@ -309,22 +309,79 @@
 // console.log(name, ctry); // John Unknown
 
 //reto 3
-const person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  links: {
-    web: {
-      blog: 'https://johndoe.com'
-    }, 
-    social: {
-      facebook: 'https://facebook.com/john.doe',
-      instagram: 'https://instagram.com/john.doe'
-    } 
+// const person = {
+//   firstName: 'John',
+//   lastName: 'Doe',
+//   links: {
+//     web: {
+//       blog: 'https://johndoe.com'
+//     }, 
+//     social: {
+//       facebook: 'https://facebook.com/john.doe',
+//       instagram: 'https://instagram.com/john.doe'
+//     } 
+//   }
+// }
+
+
+//   const urls= { facebook: fb, instagram: ig } = person.links.social
+
+
+// console.log(  fb,ig)  ;
+const array1 = [1,2,3,4,5];
+  const array2 = [6,7,8,9,10];
+  const calificaciones = { array3: [11,12,13,14,15]};
+  const pairs = [];
+  const keys = Object.keys(calificaciones)
+   
+ let na = [...array1, ...array2, ...calificaciones.array3];
+let sum=0; 
+let i;
+ 
+for (let counter = 2; counter <= na.length; counter++) {
+    let isPrime = true;
+ 
+      for ( i = 2; i < counter; i++) {
+        if (counter % i === 0 && i != counter) {
+        isPrime = false;
+      }
+    }
+  
+    if(isPrime){
+      console.log(i);
+      sum+=i;
+    }  
   }
-}
+  console.log("la suma es "+sum);
+  
+ 
+
+// function isPrime(val){
+
+//   //test if number is prime
+//   for(var i=2; i < val; i++){
+//     if(val % i === 0){
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
 
-  const urls= { facebook: fb, instagram: ig } = person.links.social
+// function sumPrimes(num) {
+//   var answer = 0;
 
+//   //loop through all numbers from 2 to input value
 
-console.log(  fb,ig)  ;
+//   for(var i=2; i <= na.length; i++){   
+
+//     //sum only prime numbers, skip all others
+//     if(isPrime(na)){
+//       answer += i;
+//     }
+//   }
+//   return answer;
+// }
+
+ 
+// console.log(sumPrimes(na));
