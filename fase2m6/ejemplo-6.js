@@ -129,22 +129,67 @@
 // console.log( john );
 
 
-const Person = function(name,school) {
-  this.name = name;
-  this.school = school;
+// const Person = function(name,school) {
+//   this.name = name;
+//   this.school = school;
+// }
+
+// const Developer = function(name, skills, yearsOfExperience) {
+//   Person.call(this, name);
+
+//   this.skills = skills;
+//   this.yearsOfExperience = yearsOfExperience;
+// }
+
+// const john = new Developer('John', 'JavaScript', 10);
+// const edwin = new Developer('John', 'JavaScript', 10);
+// console.log( edwin);
+// edwin.school = "de la vida"
+// console.log(edwin);
+// console.log(edwin instanceof Person);
+// console.log(edwin instanceof Developer);
+
+
+//reto 2
+// Crear un function constructor Group el cual crea una lista (arreglo) vacía.
+
+// Agregar los siguientes métodos a Group:
+
+// add: Agrega un nuevo valor al grupo solo si no existe.
+
+// has: Retorna un booleano indicando si el valor es un miembro del grupo.
+
+// from: Método estático que recibe un arreglo y crea un grupo con todos los elementos de dicho arreglo.
+ 
+
+const myGroup = function() {
+  this.myList= [];
 }
 
-const Developer = function(name, skills, yearsOfExperience) {
-  Person.call(this, name);
-
-  this.skills = skills;
-  this.yearsOfExperience = yearsOfExperience;
+myGroup.prototype.add = function(value) {
+  if (!this.has(value)) {
+    this.myList.push(value);
+  }
 }
 
-const john = new Developer('John', 'JavaScript', 10);
-const edwin = new Developer('John', 'JavaScript', 10);
-console.log( edwin);
-edwin.school = "de la vida"
-console.log(edwin);
-console.log(edwin instanceof Person);
-console.log(edwin instanceof Developer);
+myGroup.prototype.has = function(value) {
+  return this.myList.includes(value);
+}
+
+myGroup.from = function(myArray) {
+  const group = new myGroup();
+
+  for(let i = 0; i < myArray.length; i++) {
+    group.add(myArray[i]);
+  }
+  return group;
+}
+
+
+const group = myGroup.from([1, 2, 3, 4, 5]);
+console.log(group); // Group { members: [ 1, 2, 3, 4, 5 ] }
+console.log(group.has(5)); // true
+console.log(group.has(10)); // false
+
+group.add(10);
+console.log(group.has(10)); // true
