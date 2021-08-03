@@ -162,34 +162,63 @@
 // from: Método estático que recibe un arreglo y crea un grupo con todos los elementos de dicho arreglo.
  
 
-const myGroup = function() {
-  this.myList= [];
+// const myGroup = function() {
+//   this.myList= [];
+// }
+
+// myGroup.prototype.add = function(value) {
+//   if (!this.has(value)) {
+//     this.myList.push(value);
+//   }
+// }
+
+// myGroup.prototype.has = function(value) {
+//   return this.myList.includes(value);
+// }
+
+// myGroup.from = function(myArray) {
+//   const group = new myGroup();
+
+//   for(let i = 0; i < myArray.length; i++) {
+//     group.add(myArray[i]);
+//   }
+//   return group;
+// }
+
+// const group = myGroup.from([1, 2, 3, 4, 5]);
+// console.log(group); // Group { members: [ 1, 2, 3, 4, 5 ] }
+// console.log(group.has(5)); // true
+// console.log(group.has(10)); // false
+// group.add(10);
+// console.log(group.has(10)); // true
+
+//something
+// const Person = function(name,birthYear,job) {
+//   this.name = name;
+//   this.birthYear = this.birthYear;
+//   this.job = job;
+// }
+// Person.prototype.calculateAge= function(){
+//   const today = new Date ();
+//   const year = today.getFullYear();
+//   console.log(year - this.birth);
+// }
+
+// const johnPerson = new Person('john', 1990, 'developer');
+// const erandi = new Person('erandi', 2005, 'lee');
+// const santi = new Person ('santi', 2003 , 'ta');
+// const mariano = new Person('mariano', 2002, 'ta');
+ 
+const Triangle = function(a, b, c) {
+this.a =  a;
+this.b =   b;
+this.c = c;
+}
+Triangle.prototype.getPerimeter = function() {
+  return this.a + this.b + this.c;
 }
 
-myGroup.prototype.add = function(value) {
-  if (!this.has(value)) {
-    this.myList.push(value);
-  }
-}
+const triangle = new Triangle(1, 2, 3);
 
-myGroup.prototype.has = function(value) {
-  return this.myList.includes(value);
-}
-
-myGroup.from = function(myArray) {
-  const group = new myGroup();
-
-  for(let i = 0; i < myArray.length; i++) {
-    group.add(myArray[i]);
-  }
-  return group;
-}
-
-
-const group = myGroup.from([1, 2, 3, 4, 5]);
-console.log(group); // Group { members: [ 1, 2, 3, 4, 5 ] }
-console.log(group.has(5)); // true
-console.log(group.has(10)); // false
-
-group.add(10);
-console.log(group.has(10)); // true
+console.log(triangle); // Triangle { a: 1, b: 2, c: 3 }
+console.log(triangle.getPerimeter()); // 6
