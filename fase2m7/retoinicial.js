@@ -173,33 +173,116 @@
 
 
 
+// //kinda
+// class retoInicial {
+//     constructor() {
+//       this.fStack = [];
+//       this.sStack = [];
+//     }
+  
+//     enqueue(x) {
+//         console.log("from class ingresando el valor: " , x);
+//       this.fStack.push(x);
+//     }
+  
+//     dequeue() {
+//       if (this.sStack.length === 0) {
+  
+      
+//         while (this.sStack.length > 0) {
+//           const item= this.sStack.pop();
+//           this.sStack.push(item);
+//         }
+  
+     
+//         if (this.sStack.length === 0) {
+//          console.log("vacia ");
+//         }
+//       }
+//       return this.sStack.pop();
+//     }
 
+//     print(){
+//         this.fStack.myStackF.print();
+//     }
+//   }
+
+
+
+  
+// const myStackF = function () {
+//   this.stacky = [];
+// };
+// myStackF.prototype.push = function (x) {
+//     console.log("From stackf input : ", x);
+//   this.stacky.push(x);
+// };
+
+// myStackF.prototype.pop = function () {
+    
+//   this.stacky.pop();
+// };
+// //const lastItem = colors[colors.length - 1]
+// myStackF.prototype.peek = function () {
+//   this.stacky[0];
+// };
+
+// myStackF.prototype.print = function () {
+//   console.log([...this.stacky]);
+// };
+
+ 
+// let obj = new retoInicial();
+// obj.enqueue("a");
+// obj.enqueue("b");
+// obj.enqueue("c");
+// obj.enqueue("d");
+//  obj.dequeue();
+//  obj.print();
+// let obj2 = new myStackF();
+// obj2.push(1);
+// obj2.push(2);
+// obj2.push(3);
+// obj2.push(4);
+// obj2.print();
+// console.log(obj2.pop());
+// console.log(obj2.peek());
+// console.log(obj2.print());
+
+
+
+
+ 
+//kinda
 class retoInicial {
     constructor() {
-      this.fStack = [];
-      this.sStack = [];
+        this.fStack= new myStackF();
+        this.sStack = new myStackF();
+    //   this.fStack = [];
+    //   this.sStack = [];
     }
   
     enqueue(x) {
-        console.log("from class ingresando el valor: " , x);
+      //  console.log("from class ingresando el valor: " , x);
       this.fStack.push(x);
     }
   
     dequeue() {
-      if (this.sStack.length === 0) {
-  
-      
+      if (this.sStack.length=== 0) { 
         while (this.sStack.length > 0) {
           const item= this.sStack.pop();
           this.sStack.push(item);
         }
   
-     
         if (this.sStack.length === 0) {
          console.log("vacia ");
         }
       }
       return this.sStack.pop();
+    }
+
+    print(){
+        this.fStack.print();
     }
   }
 
@@ -210,7 +293,7 @@ const myStackF = function () {
   this.stacky = [];
 };
 myStackF.prototype.push = function (x) {
-    console.log("From stackf input : ", x);
+    //console.log("From stackf input : ", x);
   this.stacky.push(x);
 };
 
@@ -227,23 +310,14 @@ myStackF.prototype.print = function () {
   console.log([...this.stacky]);
 };
 
-// const MyQueuey = function () {
-//   this.queue = myStackF();
-// };
-
-// MyQueuey.prototype.push = function (x) {
-//   this.queue.push(x);
-// };
-
-// MyQueuey.prototype.shift = function () {
-//   this.queue.shift();
-// };
-
+ 
 let obj = new retoInicial();
 obj.enqueue("a");
 obj.enqueue("b");
 obj.enqueue("c");
 obj.enqueue("d");
+ 
+ obj.print();
  obj.dequeue();
  obj.print();
 let obj2 = new myStackF();
@@ -251,7 +325,7 @@ obj2.push(1);
 obj2.push(2);
 obj2.push(3);
 obj2.push(4);
-obj2.print();
-console.log(obj2.pop());
-console.log(obj2.peek());
-console.log(obj2.print());
+//obj2.print();
+// console.log(obj2.pop());
+// console.log(obj2.peek());
+// console.log(obj2.print());
