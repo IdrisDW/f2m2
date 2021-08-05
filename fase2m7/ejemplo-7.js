@@ -116,13 +116,32 @@
 // console.log(array); // [1, 2, 3, 4, 5, 6]
 
 
-function compact(array) {
+// function compact(array) {
+//   // Code goes here...
+//   return array.filter(Boolean);
+// }
+
+// const array = [0, 1, false, 2, '', 3];
+// const compactedArray = compact(array);
+
+// console.log(compactedArray); // [1, 2, 3]
+
+function loop(start, test, update, body) {
   // Code goes here...
-  return array.filter(Boolean);
+  for (let value = start; test(value); value = update(value)) {
+    body(value);
+  }
 }
 
-const array = [0, 1, false, 2, '', 3];
-const compactedArray = compact(array);
+const test = function(n) {
+  return n > 0;
+}
 
-console.log(compactedArray); // [1, 2, 3]
+const update = function(n) {
+  return n - 1;
+}
 
+loop(3, test, update, console.log);
+// 3
+// 2
+// 1

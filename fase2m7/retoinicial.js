@@ -210,10 +210,12 @@ const myStackF = function () {
   this.stacky = [];
 };
 myStackF.prototype.push = function (x) {
+    console.log("From stackf input : ", x);
   this.stacky.push(x);
 };
 
 myStackF.prototype.pop = function () {
+    
   this.stacky.pop();
 };
 //const lastItem = colors[colors.length - 1]
@@ -225,23 +227,25 @@ myStackF.prototype.print = function () {
   console.log([...this.stacky]);
 };
 
-const MyQueuey = function () {
-  this.queue = myStackF();
-};
+// const MyQueuey = function () {
+//   this.queue = myStackF();
+// };
 
-MyQueuey.prototype.push = function (x) {
-  this.queue.push(x);
-};
+// MyQueuey.prototype.push = function (x) {
+//   this.queue.push(x);
+// };
 
-MyQueuey.prototype.shift = function () {
-  this.queue.shift();
-};
+// MyQueuey.prototype.shift = function () {
+//   this.queue.shift();
+// };
 
 let obj = new retoInicial();
 obj.enqueue("a");
 obj.enqueue("b");
 obj.enqueue("c");
 obj.enqueue("d");
+ obj.dequeue();
+ obj.print();
 let obj2 = new myStackF();
 obj2.push(1);
 obj2.push(2);
