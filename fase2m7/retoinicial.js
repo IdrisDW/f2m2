@@ -181,6 +181,7 @@ class retoInicial {
     }
   
     enqueue(x) {
+        console.log("from class ingresando el valor: " , x);
       this.fStack.push(x);
     }
   
@@ -215,13 +216,13 @@ myStackF.prototype.push = function (x) {
 myStackF.prototype.pop = function () {
   this.stacky.pop();
 };
-
+//const lastItem = colors[colors.length - 1]
 myStackF.prototype.peek = function () {
   this.stacky[0];
 };
 
 myStackF.prototype.print = function () {
-  console.log(myStackF);
+  console.log([...this.stacky]);
 };
 
 const MyQueuey = function () {
@@ -235,3 +236,18 @@ MyQueuey.prototype.push = function (x) {
 MyQueuey.prototype.shift = function () {
   this.queue.shift();
 };
+
+let obj = new retoInicial();
+obj.enqueue("a");
+obj.enqueue("b");
+obj.enqueue("c");
+obj.enqueue("d");
+let obj2 = new myStackF();
+obj2.push(1);
+obj2.push(2);
+obj2.push(3);
+obj2.push(4);
+obj2.print();
+console.log(obj2.pop());
+console.log(obj2.peek());
+console.log(obj2.print());

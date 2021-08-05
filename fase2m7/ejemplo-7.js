@@ -114,3 +114,15 @@
 // const array = flatten(arrays);
 
 // console.log(array); // [1, 2, 3, 4, 5, 6]
+
+
+function compact(array) {
+  // Code goes here...
+  return array.filter(Boolean);
+}
+
+const array = [0, 1, false, 2, '', 3];
+const compactedArray = compact(array);
+
+console.log(compactedArray); // [1, 2, 3]
+
