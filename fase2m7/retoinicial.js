@@ -54,7 +54,6 @@ class retoInicial {
       
     }
      
-   
   
     print() {
       this.fStack.print();
