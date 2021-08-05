@@ -29,6 +29,9 @@ myStackF.prototype.print = function () {
   console.log([...this.stacky]);
 };
 
+myStackF.prototype.shift = function () {
+    this.stacky.shift();
+  };
 
 class retoInicial {
     constructor() {
@@ -37,31 +40,21 @@ class retoInicial {
     }
   
     enqueue(x) {
-  
-     for (let x of this.fStack.stacky){
-       this.sStack.push(this.fStack.pop());
-      }
-  
-     this.fStack.push(x);
-     for(let x of this.sStack.stacky) {
-       this.fStack.push(this.sStack.pop());
-  
-     }
-   
+        this.fStack.push(x);
     }
   
     dequeue() {
-     
-      if (this.fStack.length == 0)
-      {
-        console.log("vacia");
-      }
-    else{
-      return this.fStack.pop();
-    }
+        if (this.sStack.length === 0) {
+                   console.log("error");
+                }else{
+   return this.fStack.shift(); 
+                 
+                }
+          
       
-  }
-    
+    }
+     
+   
   
     print() {
       this.fStack.print();
@@ -77,6 +70,7 @@ obj.enqueue("b");
 obj.enqueue("c");
 obj.enqueue("d");
 obj.print();
+console.log("after dequeue ");
 obj.dequeue();
 obj.print();
 
