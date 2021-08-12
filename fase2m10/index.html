@@ -1,0 +1,120 @@
+<!-- <html>
+  <head>
+    <title>Ejemplo 1: Eventos en nodos del DOM</title>
+  </head>
+  <body>
+    <h1 id="title">Hello World</h1>
+
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="black">Black</button>
+<h1>ej2</h1>
+<input type="text" id="text" />
+
+<h2>Press Enter to turn this page blue.</h2>
+<h2>Press Ctrl + Enter to turn this page orange.</h2>
+    <script>
+      Code goes here
+      
+      getElementById('title');
+      const title = document.querySelector('#title');
+const redButton = document.querySelector('#red');//getElementById('red');
+
+const blueButton = document.querySelector('#blue');//getElementById('blue');
+
+const blackButton = document.querySelector('#black');
+
+redButton.addEventListener('click', () => {title.style = "color:red"})
+blueButton.addEventListener('click', () => {title.style = "color:blue"})
+blackButton.addEventListener('click', () => {title.style = "color:black"})
+
+ej2
+const title = document.querySelector('#title');
+const inputText = document.querySelector('#text')
+input.addEventListener("input", function(event) {
+  title.textContent = event.target.value;
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    document.body.style.background = "lightblue";
+  }
+
+  if (event.key == "Enter" && event.ctrlKey) {
+    document.body.style.background = "orange";
+  }
+});
+
+
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Reto 1: Inflar un globo</title>
+  </head>
+
+  <body>
+    <p>🎈</p>
+
+    <script>
+      const p = document.querySelector("p");
+      let size;
+
+      function newsSize(newSize) {
+        size = newSize;
+        p.style.fontSize = size + "px";
+      }
+
+      newsSize(20);
+
+    
+ 
+var handler = function(e){
+        if (e.key == "ArrowUp") {
+          if (size > 80) {
+            p.textContent = "💥";
+            document.body.removeEventListener("keydown", handler);
+          } else {
+            newsSize(size * 1.1);
+            e.preventDefault();
+          }
+        } else if (e.key == "ArrowDown") {
+         newsSize(size * 0.9);
+          e.preventDefault();
+        }
+    }
+   
+
+      document.body.addEventListener("keydown", handler);
+
+      // Code goes here
+      //   const p = document.querySelector("p");
+      //   let size;
+      //   var ignoreKey = false;
+      //   function setSize(newSize) {
+      //     size = newSize;
+      //     p.style.fontSize = size + "px";
+      //   }
+      //   setSize(20);
+      //   var handler = function (e) {
+      //     if (e.getKeyCode() == KeyEvent.VK_UP) {
+      //         alert('asd');
+      //       if (size > 80) {
+      //         p.textContent = "💥";
+      //         document.body.removeEventListener(e.getKeyCode() == KeyEvent.VK_DOWN, handler);
+      //       } else {
+      //         setSize(size * 1.1);
+      //         e.preventDefault();
+      //       }
+      //     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+      //       setSize(size * 0.9);
+      //       e.preventDefault();
+      //     }
+      //   };
+
+      //   document.body.addEventListener('keydown',handler,false);
+    </script>
+  </body>
+</html>
